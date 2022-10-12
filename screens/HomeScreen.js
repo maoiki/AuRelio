@@ -1,16 +1,21 @@
 import React from 'react';
 import { StyleSheet, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import Constants from 'expo-constants'
-import { Header, Feed } from '../src/components/' 
+import Constants from 'expo-constants';
+import { Header } from '../src/components/Header';
+import { Feed } from '../src/components/Feed';
+
+
 
 
 export default function HomeScreen({navigation}) {
+
+
   return (
     <View style={styles.container}>
-      <StatusBar style='auto' />
+      <StatusBar style="auto" backgroundColor="transparent" translucent />
       <Header navigation={navigation}/>
-      <Feed/>
+      <Feed navigation={navigation}/>
     </View>
   );
 }

@@ -1,15 +1,16 @@
 import React from 'react';
 import { View,StyleSheet, Image, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { theme } from '../theme/theme';
 
 export function Header ({navigation}){
     return(
   <View style={styles.header}>
-      <View style={styles.titulo}>
+      <View style={styles.title}>
+        <FontAwesome5 name="dog" size={28} color={theme.colors.green} />
         <Text style={styles.text}> AuRelio </Text>
-        <FontAwesome5 name="dog" size={24} color="black" />
       </View>
-      <FontAwesome5 style={styles.icon}  name="bars" size={26} color="black"  />
+      <FontAwesome5 style={styles.icon}  name="bars" size={26} color={theme.colors.green}  />
   </View>
     )};
     
@@ -23,12 +24,13 @@ export function Header ({navigation}){
             justifyContent:'space-between',
         },
         text: {
-          fontSize:26,
+          fontSize:28,
+          color: theme.colors.green,
         },
         icon: {
           marginRight: 10
         },
-        titulo: {
+        title: {
           alignItems: 'center',
           flexDirection: 'row',
         }

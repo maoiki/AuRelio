@@ -1,12 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Header } from './src/components/Header'
 import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import * as SplashScreen from 'expo-splash-screen';
-import Constants from 'expo-constants'
-import { Feed } from './src/components/Feed';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import HomeScreen from "./screens/HomeScreen";
+import DogDetails from "./screens/DogDetails";
+
+
 
 export default function App() {
+
+  const Stack = createStackNavigator();
+
   SplashScreen.preventAutoHideAsync();
   
   const [fontsLoaded] = useFonts({
@@ -20,17 +25,20 @@ export default function App() {
 
   SplashScreen.hideAsync();
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" backgroundColor="transparent" translucent />
-      <Header/>
-      <Feed/>
-    </View>
-  );
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeScreen">
+
+          <Stack.Screen 
+            name="HomeScreen" 
+            component={HomeScreen}
+            options={{headerShown: false}} />
+
+          <Stack.Screen 
+            name="Detalhes" 
+            component={DogDetails}
+            options={{headerShown: true}}/>
+
+        </Stack.Navigator>
+    </NavigationContainer>  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: Constants.statusBarHeight,
-  },
-});
