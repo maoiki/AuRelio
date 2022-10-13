@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, View, Image, Text} from 'react-native';
+import { StyleSheet, View, Image, Text, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants'
 import { Header } from '../src/components/Header';
@@ -22,7 +22,7 @@ export default function DogDetails({navigation, route}) {
       <View style={styles.infos_box}>
         <View style={styles.infos_content}>
           <Text style={styles.infos_title}> Temperamento: </Text>
-          <Text> {route.params?.infos__temper} </Text>
+          <Text style={styles.infos_description}> {route.params?.infos__temper} </Text>
         </View>
 
         <View style={styles.infos_content}>
@@ -48,17 +48,18 @@ export default function DogDetails({navigation, route}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#f2f',
-    marginTop: Constants.statusBarHeight,
+    backgroundColor:theme.colors.background,
   },
   breedname: {
     fontSize:24,
-    color: theme.colors.text_primary,
+    color: theme.colors.orange,
     alignSelf: 'center',
-
+    position: 'relative',
+    top: -28,
+    backgroundColor:theme.colors.background,
+marginHorizontal:10,
   },
   detailsImg: {
-    borderRadius: 50,
   },
   infos_box: {
     marginHorizontal: 10,
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
 
   },
   infos_content: {
+    borderColor: theme.colors.orange,
     borderRadius: 8,
     backgroundColor: theme.colors.background,
     marginVertical: 10,
@@ -79,5 +81,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 0.62,
     elevation: 4,
+  },
+  infos_title: {
+    color: theme.colors.green,
+    fontSize: 20,
+  },
+  infos_description: {
+    fontSize: 16,
   }
 });

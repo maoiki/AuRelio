@@ -3,6 +3,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import { theme } from './src/theme/theme'
+
 import HomeScreen from "./screens/HomeScreen";
 import DogDetails from "./screens/DogDetails";
 
@@ -26,7 +28,7 @@ export default function App() {
   SplashScreen.hideAsync();
   return (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{ headerStyle: { backgroundColor: theme.colors.background } }}>
 
           <Stack.Screen 
             name="HomeScreen" 
@@ -34,9 +36,12 @@ export default function App() {
             options={{headerShown: false}} />
 
           <Stack.Screen 
-            name="Detalhes" 
+            name="DogDetails" 
             component={DogDetails}
-            options={{headerShown: true}}/>
+            options={{
+              headerShown: true,
+              title: 'Details',
+              }}/>
 
         </Stack.Navigator>
     </NavigationContainer>  );

@@ -8,7 +8,7 @@ export function Feed ({navigation}){
 
   useEffect(function(){
       async function getData() {
-          const response = await fetch('https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=25', {headers: { 
+          const response = await fetch('https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15', {headers: { 
             'content-Type': 'application/json',
             'x-api-key': 'live_jmRAbXnL9YkAF3X2g4o1D3OMFtv7OyGhnDJmakd00BOkT0Hvy68JK76oO3Ba1xZZ',
           }});
@@ -22,7 +22,7 @@ export function Feed ({navigation}){
 function renderItem({ item }){
   return(
       <TouchableOpacity style={styles.post} 
-                        onPress={() => navigation.navigate('Detalhes', 
+                        onPress={() => navigation.navigate('DogDetails', 
                                         {
                                         infos__img_url: item.url,
                                         infos__img_height: item.height,
@@ -60,10 +60,9 @@ function renderItem({ item }){
         borderRadius: 50,
         marginBottom: 20,
         
-
       },
       image: {
+        paddingTop: 10,
         borderRadius: 50,
-        
       },
     });

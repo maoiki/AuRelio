@@ -10,4 +10,4 @@ Projeto de aplicativo mobile criado para a disciplina **Desenvolvimento para dis
 * [ ] Ajustar layout detalhes do cachorro
 * [x] Conectar HomeScreen e DogDetails
 * [ ] Conferir dependências
-* [ ] Ajustar README 
+* [ ] Ajustar README
