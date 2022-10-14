@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View,StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native';
+import { View,StyleSheet, Image, FlatList, TouchableOpacity, Text } from 'react-native';
+
+import { theme } from '../theme/theme';
 
 
 export function Feed ({navigation}){
@@ -8,7 +10,7 @@ export function Feed ({navigation}){
 
   useEffect(function(){
       async function getData() {
-          const response = await fetch('https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15', {headers: { 
+          const response = await fetch('https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15', {headers: { 
             'content-Type': 'application/json',
             'x-api-key': 'live_jmRAbXnL9YkAF3X2g4o1D3OMFtv7OyGhnDJmakd00BOkT0Hvy68JK76oO3Ba1xZZ',
           }});
@@ -39,6 +41,7 @@ function renderItem({ item }){
                 aspectRatio={item.width/item.height} 
                 
                 />
+                <Text style={styles.breedname}>{item.breeds[0].name}</Text>
       </TouchableOpacity>
   );
 }
@@ -57,12 +60,24 @@ function renderItem({ item }){
     const styles = StyleSheet.create({
       post: {
         paddingHorizontal: 10,
-        borderRadius: 50,
+        borderRadius: 10,
         marginBottom: 20,
         
       },
       image: {
         paddingTop: 10,
-        borderRadius: 50,
+        borderRadius: 20,
       },
-    });
+      breedname: {
+        fontSize:24,
+        color: theme.colors.white,
+        alignSelf: 'center',
+        position: 'relative',
+        top: -32,
+        backgroundColor:theme.colors.green_dark,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+        paddingHorizontal:5,
+        paddingTop: 3,
+      },
+        });

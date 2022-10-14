@@ -1,6 +1,6 @@
 # AuRelio
 
-Projeto de aplicativo mobile criado para a disciplina **Desenvolvimento para dispositivos móveis** no semestre de 2022.2
+Projeto de aplicativo criado para a disciplina **Desenvolvimento para dispositivos móveis** no semestre de 2022.2
 
 ## Task list
 

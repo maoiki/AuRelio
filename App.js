@@ -1,5 +1,4 @@
-import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
-import * as SplashScreen from 'expo-splash-screen';
+import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -14,18 +13,6 @@ export default function App() {
 
   const Stack = createStackNavigator();
 
-  SplashScreen.preventAutoHideAsync();
-  
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  SplashScreen.hideAsync();
   return (
     <NavigationContainer>
         <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{ headerStyle: { backgroundColor: theme.colors.background } }}>
@@ -44,6 +31,7 @@ export default function App() {
               }}/>
 
         </Stack.Navigator>
-    </NavigationContainer>  );
+    </NavigationContainer>  
+    );
 }
 
