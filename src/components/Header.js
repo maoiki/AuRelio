@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { View,StyleSheet, Text, Modal } from 'react-native';
 import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import { theme } from '../theme/theme';
+
 export function Header ({navigation}){
   const [visibleModal, setVisibleModal] = useState(false);
 
