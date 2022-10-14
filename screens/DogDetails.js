@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:theme.colors.green_dark,
   },
-  img_details: {
-  },
   breedname: {
     fontSize:24,
     color: theme.colors.white,

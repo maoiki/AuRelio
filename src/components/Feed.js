@@ -10,7 +10,7 @@ export function Feed ({navigation}){
 
   useEffect(function(){
       async function getData() {
-          const response = await fetch('https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15', {headers: { 
+          const response = await fetch('https://api.thedogapi.com/v1/images/search?mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15', {headers: { 
             'content-Type': 'application/json',
             'x-api-key': 'live_jmRAbXnL9YkAF3X2g4o1D3OMFtv7OyGhnDJmakd00BOkT0Hvy68JK76oO3Ba1xZZ',
           }});
@@ -62,11 +62,13 @@ function renderItem({ item }){
         paddingHorizontal: 10,
         borderRadius: 10,
         marginBottom: 20,
-        
+
       },
       image: {
         paddingTop: 10,
         borderRadius: 20,
+        borderColor: theme.colors.green,
+        borderWidth: 4,
       },
       breedname: {
         fontSize:24,
@@ -74,7 +76,7 @@ function renderItem({ item }){
         alignSelf: 'center',
         position: 'relative',
         top: -32,
-        backgroundColor:theme.colors.green_dark,
+        backgroundColor:theme.colors.green,
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
         paddingHorizontal:5,
