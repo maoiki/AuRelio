@@ -1,13 +1,8 @@
 # AuRelio
 
-Projeto de aplicativo criado para a disciplina **Desenvolvimento para dispositivos móveis** no semestre de 2022.2
+Este projeto foi criado para a disciplina **Desenvolvimento para dispositivos móveis** e se trata de um aplicativo que mostra um feed com imagens aleatórias de cachorros, que quando clicadas mostram mais detalhes sobre a raça do cachorro da foto.
 
-## Task list
+![Homescreen](.github/homescreen.png)
+![Detalhes](.github/detalhes.png)
 
-* [x] Integrar com a [API](https://docs.thedogapi.com/)
-* [x] Utilizar tema para cores/fontes
-* [x] Tela de detalhes de cada cachorro
-* [ ] Ajustar layout detalhes do cachorro
-* [x] Conectar HomeScreen e DogDetails
-* [ ] Conferir dependências
-* [ ] Ajustar README
+
